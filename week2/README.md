@@ -2,7 +2,7 @@
 
 This notebook is my Week 2 assignment submission. The task was to build an end-to-end ML pipeline on sales/price data covering preprocessing, EDA, feature engineering, regression modeling, hyperparameter tuning, and time series forecasting.
 
----
+
 
 ## Dataset
 
@@ -10,7 +10,6 @@ This notebook is my Week 2 assignment submission. The task was to build an end-t
 
 One thing worth noting upfront: a large portion of the data is interpolated or regionally estimated (the `Source_Type` column makes this clear). So a lot of the uniformity you'll see in the EDA — equal regional splits, equal model shares — is a property of how the data was generated, not actual Tesla business patterns. I've called this out in the insights throughout.
 
----
 
 ## What's in the Notebook
 
@@ -25,7 +24,7 @@ One thing worth noting upfront: a large portion of the data is interpolated or r
 8. Time Series Forecasting — Holt-Winters and SARIMA on quarterly delivery volume with 8-quarter future projections
 9. Summary & Key Findings
 
----
+
 
 ## A Few Design Decisions I Want to Highlight
 
@@ -37,7 +36,6 @@ One thing worth noting upfront: a large portion of the data is interpolated or r
 
 **Features:** Only genuine vehicle attributes and temporal features — `Model`, `Region`, `Battery_Capacity_kWh`, `Range_km`, `Year`, `Quarter_Num`, `Charging_Stations`. No derived or proxy columns that touch the target.
 
----
 
 ## How to Run
 
@@ -52,7 +50,6 @@ df_raw = pd.read_csv("tesla_deliveries_dataset_2015_2025.csv")
 ```
 4. Run all cells top to bottom
 
----
 
 ## Libraries Used
 
