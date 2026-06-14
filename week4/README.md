@@ -10,7 +10,7 @@ This notebook is part of my Week 4 deep learning assignment. The goal was to bui
 - Preprocessing — normalization and flattening for ANN
 - Building and training an ANN model
 - Building and training a CNN model
-- CNN with data augmentation
+- Using Data Augmentation for Training models
 - Comparing all three models on accuracy and loss
 - Confusion matrix and per-class breakdown on the best model
 - Misclassified sample visualization
@@ -65,4 +65,11 @@ scikit-learn
 
 ## How to run
 
-Just open the notebook in Jupyter or Google Colab and run all cells in order. CIFAR-10 downloads automatically via Keras on the first run.
+Just open the notebook in Jupyter or Google Colab. 
+
+install this dependancies using pip
+
+```
+pip install tensorflow numpy pandas matplotlib seaborn scikit-learn
+```
+and run all cells in order. CIFAR-10 downloads automatically via Keras on the first run.
