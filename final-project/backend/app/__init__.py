@@ -1,1 +1,0 @@
-"""PatchContext FastAPI application."""
