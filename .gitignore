@@ -3,11 +3,11 @@
 .DS_Store
 __pycache__/
 *.pyc
-.venv/
-data/
-frontend/node_modules/
-frontend/.next/
-codefetch/
-patchcontext_master_prompt.md
+final-project/.venv/
+final-project/data/
+final-project/frontend/node_modules/
+final-project/frontend/.next/
+final-project/codefetch/
+final-project/patchcontext_master_prompt.md
 node_modules/
 final-project/frontend/node_modules/
