@@ -7,7 +7,7 @@ PatchContext answers repository design-history questions with a GraphRAG pipelin
 1. Copy `.env.example` to `.env` and provide `GITHUB_TOKEN`, `GROQ_API_KEY`, and `GROQ_MODEL`.
 2. `python3 -m venv .venv && .venv/bin/pip install -r backend/requirements.txt`
 3. `npm --prefix frontend install`
-4. In one terminal: `.venv/bin/uvicorn app.main:app --app-dir backend --port 8000`
+4. In one terminal: `.venv/bin/uvicorn app.main:app --app-dir backend --reload --port 8000`
 5. In another: `npm --prefix frontend run dev`
 
 Open `http://localhost:3000`, submit a public GitHub URL, then wait for its job to complete before asking a question.
@@ -23,6 +23,19 @@ Open `http://localhost:3000`, submit a public GitHub URL, then wait for its job 
 
 `evaluation/benchmark.json` is a 50-question benchmark template. After ingesting its repository, run `python evaluation/run_ragas.py --repo owner__repo`. RAGAS uses the configured Groq model and may consume its free-tier quota.
 
-## Deployment and cost
+## Live instance
 
-Build the Next.js app and serve it from the same EC2 machine as FastAPI (with a reverse proxy such as Caddy). This keeps FAISS/graph files local and avoids a broker or managed vector database. EC2 free eligibility is account-specific and time-limited; Groq free quotas can change. The local embedding/NLI models are free but require memory and disk on first download.
+The app is live at [patchcontext.vercel.app](https://patchcontext.vercel.app/).
+
+## Demo
+
+<!-- Replace the path below with the actual video file or URL once recorded -->
+![Demo video](demo.mp4)
+
+## Deployment
+
+The frontend (Next.js) is deployed on Vercel. The backend (FastAPI) runs on an AWS EC2 instance with an elastic IP mapped to a DuckDNS subdomain so the Vercel frontend can reach it over HTTPS at a stable address. FAISS indexes and graph files stay on the EC2 disk, avoiding any managed vector database.
+
+## Cost notes
+
+EC2 free-tier eligibility is account-specific and time-limited. Groq free quotas can change without notice. The local embedding and NLI models are free but require memory and disk on first download.
